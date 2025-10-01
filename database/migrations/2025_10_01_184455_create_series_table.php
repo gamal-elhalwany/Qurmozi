@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('series', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('slug')->unique(); // رابط نظيف في URL
+            $table->string('slug')->unique();
             $table->text('description')->nullable();
-            $table->string('poster_url')->nullable(); // رابط صورة البوستر
+            $table->date('show_start')->nullable(); 
+            $table->integer('duration_minutes')->nullable(); 
+            $table->string('promo')->nullable(); 
+            $table->string('mal_url')->nullable(); 
+            $table->string('poster_url')->nullable();
             $table->integer('release_year')->nullable();
             $table->timestamps();
         });

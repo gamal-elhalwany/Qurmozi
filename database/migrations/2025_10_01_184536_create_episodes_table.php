@@ -13,10 +13,11 @@ return new class extends Migration
     {
         Schema::create('episodes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('season_id')->constrained()->onDelete('cascade');
-            $table->integer('episode_number');
-            $table->string('title');
-            $table->text('video_embed_code'); // حقل لوضع كود iframe الخاص بالمشغل
+            $table->foreignId('episode_id')->constrained()->onDelete('cascade'); 
+            $table->string('type'); 
+            $table->string('quality')->nullable();
+            $table->string('source_title'); 
+            $table->string('source_url'); 
             $table->timestamps();
         });
     }

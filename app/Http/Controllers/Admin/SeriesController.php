@@ -13,8 +13,9 @@ class SeriesController extends Controller
      */
     public function index()
     {
-        $series = Series::latest()->take(15)->get();
+        $series = Series::latest()->take(20)->get();
         return view('pages.index', compact('series'));
+        // TEST CHECKOUT.
     }
 
     /**
